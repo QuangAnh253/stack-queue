@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stack và Queue</title>
+    <meta name="description" content="Trang web minh họa cách hoạt động của Stack và Queue trong môn Cấu trúc dữ liệu. Nội dung chỉ phục vụ mục đích học tập và thực hành.">
+    <meta name="keywords" content="stack, queue, cấu trúc dữ liệu, thuật toán, bài tập minh họa">
+    <meta name="author" content="Lê Quang Anh - UTT">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Stack và Queue">
+    <meta property="og:description" content="Trang minh họa cách hoạt động của Stack và Queue trong môn Cấu trúc dữ liệu.">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="./styles/animations.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <a href="https://lequanganh.id.vn" class="logo-link">
+                    <img src="https://lequanganh.id.vn/favicon.ico" alt="Logo" class="logo-img">
+                    <h1>Lê Quang Anh's Note</h1>
+                </a>
+            </div>
+            <nav class="nav">
+                <a href="#stack-section" class="nav-link">Stack</a>
+                <a href="#queue-section" class="nav-link">Queue</a>
+                <a href="https://github.com/QuangAnh253/stack-queue" target="_blank" class="nav-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </nav>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">Stack & Queue</h2>
+                <p class="hero-description">
+                    Cấu trúc dữ liệu cơ bản trong lập trình. Tìm hiểu cách hoạt động của Stack (Ngăn xếp) 
+                    và Queue (Hàng đợi) thông qua các ví dụ thực tế.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Ví dụ trực quan</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-code"></i>
+                        <span>Code minh họa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main">
+        <!-- Stack Section -->
+        <section id="stack-section" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <div class="section-title-group">
+                        <h2 class="section-title">Stack (Ngăn xếp)</h2>
+                        <p class="section-subtitle">LIFO - Last In, First Out</p>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    <!-- Theory -->
+                    <div class="theory-card">
+                        <h3><i class="fas fa-book"></i> Lý thuyết</h3>
+                        <p>Stack hoạt động theo nguyên tắc <strong>LIFO</strong> - phần tử cuối cùng được thêm vào sẽ là phần tử đầu tiên được lấy ra.</p>
+                        <div class="theory-features">
+                            <div class="feature">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>Push - Thêm vào đỉnh</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>Pop - Lấy ra từ đỉnh</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-eye"></i>
+                                <span>Peek - Xem đỉnh</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Demo -->
+                    <div class="demo-card">
+                        <h3><i class="fas fa-play"></i> Demo Tương Tác</h3>
+                        
+                        <div class="controls">
+                            <div class="input-group">
+                                <input type="text" id="stackInput" placeholder="Nhập giá trị..." maxlength="15">
+                                <button class="btn btn-primary" id="stackPushBtn">
+                                    <i class="fas fa-plus"></i> Push
+                                </button>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn btn-danger" id="stackPopBtn">
+                                    <i class="fas fa-minus"></i> Pop
+                                </button>
+                                <button class="btn btn-info" id="stackPeekBtn">
+                                    <i class="fas fa-eye"></i> Peek
+                                </button>
+                                <button class="btn btn-warning" id="stackClearBtn">
+                                    <i class="fas fa-trash"></i> Clear
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="visualization-container">
+                            <div class="stack-visualization" id="stackVisualization">
+                                <div class="empty-state">
+                                    <i class="fas fa-layer-group"></i>
+                                    <p>Stack trống</p>
+                                    <span>Nhập giá trị và nhấn Push để bắt đầu</span>
+                                </div>
+                            </div>
+                            <div class="stack-pointer">
+                                <span>Top</span>
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                        </div>
+
+                        <div class="status-panel">
+                            <div class="status-item">
+                                <label>Size:</label>
+                                <span id="stackSize">0</span>
+                            </div>
+                            <div class="status-item">
+                                <label>Top Element:</label>
+                                <span id="stackTop">None</span>
+                            </div>
+                            <div class="status-item">
+                                <label>Status:</label>
+                                <span id="stackStatus" class="status-empty">Empty</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications -->
+                <div class="applications-card">
+                    <h3><i class="fas fa-cogs"></i> Ứng Dụng Thực Tế</h3>
+                    <div class="applications-grid">
+                        <div class="application-item">
+                            <i class="fas fa-undo"></i>
+                            <h4>Undo/Redo</h4>
+                            <p>Trong text editors, image editors</p>
+                        </div>
+                        <div class="application-item">
+                            <i class="fas fa-sitemap"></i>
+                            <h4>Function Calls</h4>
+                            <p>Call stack trong programming</p>
+                        </div>
+                        <div class="application-item">
+                            <i class="fas fa-route"></i>
+                            <h4>Backtracking</h4>
+                            <p>Maze solving, puzzle games</p>
+                        </div>
+                        <div class="application-item">
+                            <i class="fas fa-globe"></i>
+                            <h4>Browser History</h4>
+                            <p>Back button functionality</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Queue Section -->
+        <section id="queue-section" class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                    <div class="section-title-group">
+                        <h2 class="section-title">Queue (Hàng đợi)</h2>
+                        <p class="section-subtitle">FIFO - First In, First Out</p>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    <!-- Theory -->
+                    <div class="theory-card">
+                        <h3><i class="fas fa-book"></i> Lý thuyết</h3>
+                        <p>Queue hoạt động theo nguyên tắc <strong>FIFO</strong> - phần tử đầu tiên được thêm vào sẽ là phần tử đầu tiên được lấy ra.</p>
+                        <div class="theory-features">
+                            <div class="feature">
+                                <i class="fas fa-sign-in-alt"></i>
+                                <span>Enqueue - Thêm vào cuối</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-sign-out-alt"></i>
+                                <span>Dequeue - Lấy ra từ đầu</span>
+                            </div>
+                            <div class="feature">
+                                <i class="fas fa-search"></i>
+                                <span>Front/Rear - Xem đầu/cuối</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Demo -->
+                    <div class="demo-card">
+                        <h3><i class="fas fa-play"></i> Demo Tương Tác</h3>
+                        
+                        <div class="controls">
+                            <div class="input-group">
+                                <input type="text" id="queueInput" placeholder="Nhập giá trị..." maxlength="15">
+                                <button class="btn btn-primary" id="queueEnqueueBtn">
+                                    <i class="fas fa-plus"></i> Enqueue
+                                </button>
+                            </div>
+                            <div class="button-group">
+                                <button class="btn btn-danger" id="queueDequeueBtn">
+                                    <i class="fas fa-minus"></i> Dequeue
+                                </button>
+                                <button class="btn btn-info" id="queueFrontBtn">
+                                    <i class="fas fa-eye"></i> Front
+                                </button>
+                                <button class="btn btn-warning" id="queueClearBtn">
+                                    <i class="fas fa-trash"></i> Clear
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="visualization-container">
+                            <div class="queue-visualization" id="queueVisualization">
+                                <div class="empty-state">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <p>Queue trống</p>
+                                    <span>Nhập giá trị và nhấn Enqueue để bắt đầu</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="status-panel">
+                            <div class="status-item">
+                                <label>Size:</label>
+                                <span id="queueSize">0</span>
+                            </div>
+                            <div class="status-item">
+                                <label>Front:</label>
+                                <span id="queueFront">None</span>
+                            </div>
+                            <div class="status-item">
+                                <label>Rear:</label>
+                                <span id="queueRear">None</span>
+                            </div>
+                            <div class="status-item">
+                                <label>Status:</label>
+                                <span id="queueStatus" class="status-empty">Empty</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications -->
+                <div class="applications-card">
+                    <h3><i class="fas fa-cogs"></i> Ứng Dụng Thực Tế</h3>
+                    <div class="applications-grid">
+                        <div class="application-item">
+                            <i class="fas fa-print"></i>
+                            <h4>Print Queue</h4>
+                            <p>Hàng đợi in ấn trong hệ thống</p>
+                        </div>
+                        <div class="application-item">
+                            <i class="fas fa-tasks"></i>
+                            <h4>Task Scheduling</h4>
+                            <p>Lập lịch công việc trong OS</p>
+                        </div>
+                        <div class="application-item">
+                            <i class="fas fa-share-alt"></i>
+                            <h4>BFS Algorithm</h4>
+                            <p>Breadth-First Search trong đồ thị</p>
+                        </div>
+                        <div class="application-item">
+                            <i class="fas fa-stream"></i>
+                            <h4>Data Streaming</h4>
+                            <p>Buffer trong video/audio streaming</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Stack & Queue</h3>
+                    <p>Interactive learning tool for data structures</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://github.com/QuangAnh253/stack-queue" target="_blank">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://lequanganh.id.vn/blog/stack-queue-applications" target="_blank">
+                        <i class="fas fa-blog"></i> Blog
+                    </a>
+                    <a href="https://mail.google.com/mail/?view=cm&to=lequanganh253@gmail.com" target="_blank">
+                    <i class="fas fa-envelope"></i> Contact
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025/ Lê Quang Anh.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-content">
+            <i class="toast-icon"></i>
+            <span class="toast-message"></span>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="./js/classes/Stack.js"></script>
+    <script src="./js/classes/Queue.js"></script>
+    <script src="./js/utils/animations.js"></script>
+    <script src="./js/utils/notifications.js"></script>
+    <script src="./js/components/StackDemo.js"></script>
+    <script src="./js/components/QueueDemo.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>

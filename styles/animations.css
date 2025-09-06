@@ -1,0 +1,517 @@
+/**
+ * Animation Styles for Stack & Queue Visualizer
+ * Enhanced animations for better user experience
+ */
+
+/* Stack Item Animations */
+@keyframes stackPush {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.8);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes stackPop {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-30px) scale(0.8);
+  }
+}
+
+@keyframes stackHighlight {
+  0% {
+    background: linear-gradient(135deg, var(--scheme-brand-500), var(--scheme-brand-600));
+    box-shadow: var(--shadow-md);
+  }
+  50% {
+    background: linear-gradient(135deg, var(--color-warning), #f59e0b);
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+    transform: scale(1.05);
+  }
+  100% {
+    background: linear-gradient(135deg, var(--scheme-brand-500), var(--scheme-brand-600));
+    box-shadow: var(--shadow-md);
+    transform: scale(1);
+  }
+}
+
+/* Queue Item Animations */
+@keyframes queueEnqueue {
+  0% {
+    opacity: 0;
+    transform: translateX(30px) scale(0.8);
+  }
+  50% {
+    transform: translateX(15px) scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes queueDequeue {
+  0% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(-15px) scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.8);
+  }
+}
+
+@keyframes queueHighlight {
+  0% {
+    background: linear-gradient(135deg, var(--scheme-accent-400), var(--scheme-accent-500));
+    box-shadow: var(--shadow-md);
+  }
+  50% {
+    background: linear-gradient(135deg, var(--color-info), #2563eb);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+    transform: scale(1.05);
+  }
+  100% {
+    background: linear-gradient(135deg, var(--scheme-accent-400), var(--scheme-accent-500));
+    box-shadow: var(--shadow-md);
+    transform: scale(1);
+  }
+}
+
+/* Button Press Animations */
+@keyframes buttonPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Loading Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dots {
+  0%, 20% {
+    color: rgba(0,0,0,0);
+    text-shadow: .25em 0 0 rgba(0,0,0,0),
+                 .5em 0 0 rgba(0,0,0,0);
+  }
+  40% {
+    color: var(--scheme-brand-500);
+    text-shadow: .25em 0 0 rgba(0,0,0,0),
+                 .5em 0 0 rgba(0,0,0,0);
+  }
+  60% {
+    text-shadow: .25em 0 0 var(--scheme-brand-500),
+                 .5em 0 0 rgba(0,0,0,0);
+  }
+  80%, 100% {
+    text-shadow: .25em 0 0 var(--scheme-brand-500),
+                 .5em 0 0 var(--scheme-brand-500);
+  }
+}
+
+/* Card Hover Effects */
+@keyframes cardLift {
+  from {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+  }
+  to {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+  }
+}
+
+@keyframes cardSettle {
+  from {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+  }
+  to {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+  }
+}
+
+/* Status Change Animations */
+@keyframes statusSuccess {
+  0% {
+    color: var(--scheme-neutral-400);
+  }
+  50% {
+    color: var(--color-success);
+    transform: scale(1.1);
+  }
+  100% {
+    color: var(--color-success);
+    transform: scale(1);
+  }
+}
+
+@keyframes statusError {
+  0% {
+    color: var(--scheme-neutral-400);
+  }
+  50% {
+    color: var(--color-error);
+    transform: scale(1.1);
+  }
+  100% {
+    color: var(--color-error);
+    transform: scale(1);
+  }
+}
+
+@keyframes statusWarning {
+  0% {
+    color: var(--scheme-neutral-400);
+  }
+  50% {
+    color: var(--color-warning);
+    transform: scale(1.1);
+  }
+  100% {
+    color: var(--color-warning);
+    transform: scale(1);
+  }
+}
+
+/* Toast Animations */
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* Pointer Animations */
+@keyframes pointerBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-5px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+@keyframes arrowPulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Graph Node Animations (for BFS demo) */
+@keyframes nodeVisited {
+  0% {
+    background: var(--scheme-neutral-600);
+    transform: scale(1);
+  }
+  50% {
+    background: var(--color-info);
+    transform: scale(1.2);
+  }
+  100% {
+    background: var(--color-success);
+    transform: scale(1);
+  }
+}
+
+@keyframes nodeProcessing {
+  0% {
+    background: var(--scheme-neutral-600);
+  }
+  100% {
+    background: var(--color-warning);
+  }
+}
+
+@keyframes edgeHighlight {
+  0% {
+    stroke: var(--scheme-neutral-600);
+    stroke-width: 2;
+  }
+  50% {
+    stroke: var(--color-info);
+    stroke-width: 4;
+  }
+  100% {
+    stroke: var(--color-success);
+    stroke-width: 2;
+  }
+}
+
+/* Text Editor Cursor Animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Utility Animation Classes */
+.animate-stackPush {
+  animation: stackPush 0.4s ease-out forwards;
+}
+
+.animate-stackPop {
+  animation: stackPop 0.4s ease-in forwards;
+}
+
+.animate-stackHighlight {
+  animation: stackHighlight 0.8s ease-in-out;
+}
+
+.animate-queueEnqueue {
+  animation: queueEnqueue 0.4s ease-out forwards;
+}
+
+.animate-queueDequeue {
+  animation: queueDequeue 0.4s ease-in forwards;
+}
+
+.animate-queueHighlight {
+  animation: queueHighlight 0.8s ease-in-out;
+}
+
+.animate-buttonPress {
+  animation: buttonPress 0.2s ease-in-out;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+.animate-dots::after {
+  content: '...';
+  display: inline-block;
+  width: 1em;
+  text-align: left;
+  animation: dots 2s linear infinite;
+}
+
+.animate-cardLift {
+  animation: cardLift 0.3s ease-out forwards;
+}
+
+.animate-cardSettle {
+  animation: cardSettle 0.3s ease-out forwards;
+}
+
+.animate-statusSuccess {
+  animation: statusSuccess 0.5s ease-out;
+}
+
+.animate-statusError {
+  animation: statusError 0.5s ease-out;
+}
+
+.animate-statusWarning {
+  animation: statusWarning 0.5s ease-out;
+}
+
+.animate-toastSlideIn {
+  animation: toastSlideIn 0.3s ease-out forwards;
+}
+
+.animate-toastSlideOut {
+  animation: toastSlideOut 0.3s ease-in forwards;
+}
+
+.animate-pointerBounce {
+  animation: pointerBounce 1s ease-in-out infinite;
+}
+
+.animate-arrowPulse {
+  animation: arrowPulse 1.5s ease-in-out infinite;
+}
+
+.animate-nodeVisited {
+  animation: nodeVisited 0.6s ease-out forwards;
+}
+
+.animate-nodeProcessing {
+  animation: nodeProcessing 0.3s ease-out forwards;
+}
+
+.animate-edgeHighlight {
+  animation: edgeHighlight 0.5s ease-out forwards;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* Hover Effect Enhancements */
+.stack-item:hover {
+  animation: none !important;
+  transform: scale(1.08) !important;
+  z-index: 10;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.queue-item:hover {
+  animation: none !important;
+  transform: scale(1.08) !important;
+  z-index: 10;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.btn:active {
+  animation: buttonPress 0.1s ease-in-out;
+}
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+  .animate-stackPush,
+  .animate-stackPop,
+  .animate-queueEnqueue,
+  .animate-queueDequeue {
+    animation-duration: 0.3s;
+  }
+  
+  .animate-stackHighlight,
+  .animate-queueHighlight {
+    animation-duration: 0.6s;
+  }
+  
+  .stack-item:hover,
+  .queue-item:hover {
+    transform: scale(1.05) !important;
+  }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .animate-stackPush,
+  .animate-stackPop,
+  .animate-queueEnqueue,
+  .animate-queueDequeue,
+  .animate-stackHighlight,
+  .animate-queueHighlight,
+  .animate-buttonPress,
+  .animate-spin,
+  .animate-cardLift,
+  .animate-cardSettle,
+  .animate-statusSuccess,
+  .animate-statusError,
+  .animate-statusWarning,
+  .animate-toastSlideIn,
+  .animate-toastSlideOut,
+  .animate-pointerBounce,
+  .animate-arrowPulse,
+  .animate-nodeVisited,
+  .animate-nodeProcessing,
+  .animate-edgeHighlight,
+  .animate-blink {
+    animation: none !important;
+  }
+  
+  .stack-item:hover,
+  .queue-item:hover {
+    transform: none !important;
+  }
+}
+
+/* Focus Animations */
+.btn:focus-visible {
+  animation: arrowPulse 0.8s ease-in-out 2;
+}
+
+input:focus,
+textarea:focus {
+  animation: arrowPulse 0.6s ease-in-out 1;
+}
+
+/* State Transition Animations */
+.status-panel .status-item span {
+  transition: all var(--transition-normal);
+}
+
+.status-panel .status-item span.changing {
+  animation: statusSuccess 0.5s ease-out;
+}
+
+/* Loading State Animation */
+.visualization-container.loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid var(--scheme-neutral-800);
+  border-top-color: var(--scheme-brand-500);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 100;
+}
+
+.visualization-container.loading::after {
+  content: 'Processing...';
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--scheme-brand-500);
+  font-weight: 600;
+  z-index: 100;
+}
