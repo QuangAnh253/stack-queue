@@ -18,7 +18,7 @@
 
 ## 🚀 Live Demo
 
-**[👉 Try the Demo Here](https://lequanganh.id.vn/stack-queue)**
+**[👉 Try the Demo Here](https://stackqueue.lequanganh.id.vn/)**
 
 ![Stack and Queue Demo](./assets/demo-screenshot.png)
 
